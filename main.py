@@ -69,10 +69,6 @@ async def connect_to_wss(socks5_proxy, user_id):
 async def main():
     # GANTI USERID
     _user_id = '2oEldcaTcvrIA9q6dDkaakTIvyJ'
-    # ISI PROXY DARI IPROYAL
-    socks5_proxy_list = [
-        'socks5://user:pwd@ip:port',
-    ]
     tasks = [asyncio.ensure_future(connect_to_wss(i, _user_id)) for i in socks5_proxy_list]
     await asyncio.gather(*tasks)
 
